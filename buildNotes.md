@@ -41,7 +41,19 @@
 		- follow template
 		- include preview code and URL for store
 
+
+
+You are here: 
+	- Button is made for categories
+	- Hover event is happening on image, but new image is not loading
+	- Need to hook up button still
+	
+
+
+
 **Prompt:
+
+
 Setup  
 ----------  
 Sign up for a BigCommerce trial store, this will be valid for 15 days and will be needed to complete the test  
