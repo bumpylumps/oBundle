@@ -5,7 +5,7 @@
 	- use bigCommerce cornerstone theme
 
 
-**Params: 
+**Params:**
 	- Create a product named Special Item** 
 		- Category: 
 			- Special Items
@@ -37,6 +37,9 @@
 	5) Build product
 	6) Build buttons
 	7) add customer info
+	8) README: 
+		- follow template
+		- include preview code and URL for store
 
 **Prompt:
 Setup  
