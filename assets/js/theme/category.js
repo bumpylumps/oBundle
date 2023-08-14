@@ -4,6 +4,9 @@ import compareProducts from './global/compare-products';
 import FacetedSearch from './common/faceted-search';
 import { createTranslationDictionary } from '../theme/common/utils/translations-utils';
 
+
+
+
 export default class Category extends CatalogPage {
     constructor(context) {
         super(context);
@@ -27,6 +30,21 @@ export default class Category extends CatalogPage {
         $('a.navList-action').on('click', () => this.setLiveRegionAttributes($('span.price-filter-message'), 'status', 'assertive'));
     }
 
+    onShowProductSecondImage(e){
+        const card = $(e.currentTarget).find(".card-image");
+        const image = card.attr("data-hover-image");
+        console.log(image)
+
+        card.attr("srcset", image);
+    }
+
+    onRemoveProductSecondImage(e) {
+        const card = $(e.currentTarget).find(".card-image");
+        const image = card.attr("data-src")
+
+        card.attr("srcset", image);
+    }
+
     onReady() {
         this.arrangeFocusOnSortBy();
 
@@ -45,8 +63,16 @@ export default class Category extends CatalogPage {
 
         $('a.reset-btn').on('click', () => this.setLiveRegionsAttributes($('span.reset-message'), 'status', 'polite'));
 
+        $(".card-figure").hover(
+            this.onShowProductSecondImage.bind(this),
+            this.onRemoveProductSecondImage.bind(this)
+
+        );
+        
         this.ariaNotifyNoProducts();
     }
+
+  
 
     ariaNotifyNoProducts() {
         const $noProductsMessage = $('[data-no-products-notification]');

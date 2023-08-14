@@ -48,6 +48,16 @@ category:
     {{/if}}
 
     <div class="page-content" id="product-listing-container">
+    <form class="form" 
+        method="post" 
+        action="/cart.php"
+        enctype="multipart/form-data"
+        data-cart-item-add >
+        <input id="form-action-addToCart" 
+            data-wait-message="Adding to cart…" 
+            class="button button--primary" 
+            type="submit" value="Add All to Cart">
+    </form>
         {{> components/category/product-listing}}
         {{{region name="category_below_content"}}}
     </div>
